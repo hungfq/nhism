@@ -10,7 +10,7 @@
     herName: 'Em',
     myName: 'Anh',
     startDate: '2024-01-01T00:00:00+07:00',
-    taglines: ['Một món quà nhỏ dành cho em ❤️'],
+    taglines: ['Một món quà nhỏ dành cho iem ❤️'],
     timeline: [],
     photos: [],
     reasons: [],

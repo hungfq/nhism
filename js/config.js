@@ -16,7 +16,7 @@ window.GIFT_CONFIG = {
     taglines: [
         'Cảm ơn em vì đã ở đây.',
         'Mỗi ngày có em đều là ngày đẹp.',
-        'Trang này anh làm riêng cho em ❤️'
+        'Trang này anh làm riêng cho iem ❤️'
     ],
 
     /* --- Mốc kỷ niệm --- */
@@ -55,7 +55,7 @@ window.GIFT_CONFIG = {
     letter: {
         title: 'Gửi em,',
         paragraphs: [
-            'Anh không giỏi nói mấy lời ngọt ngào, nên anh ngồi gõ từng dòng này cho em.',
+            'Anh không giỏi nói mấy lời ngọt ngào, nên anh ngồi gõ từng dòng này cho iem.',
             'Cảm ơn em vì đã đi cùng anh qua những ngày dễ và cả những ngày không dễ chút nào. Có em, mọi thứ nhẹ đi rất nhiều.',
             'Anh không hứa những điều to tát. Anh chỉ hứa sẽ cố gắng mỗi ngày, để em luôn thấy mình được thương.',
             'Yêu em, nhiều hơn hôm qua một chút.'
