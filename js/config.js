@@ -31,12 +31,12 @@ window.GIFT_CONFIG = {
        Bỏ ảnh vào thư mục assets/photos/ rồi khai báo ở đây.
        Ảnh chưa có sẽ tự hiện khung placeholder dễ thương, không vỡ layout. */
     photos: [
-        {src: 'assets/photos/1.jpg', caption: 'Lần đầu mình đi chơi xa'},
-        {src: 'assets/photos/2.jpg', caption: 'Em và ly trà sữa quen thuộc'},
-        {src: 'assets/photos/3.jpg', caption: 'Hoàng hôn hôm đó đẹp thật'},
-        {src: 'assets/photos/4.jpg', caption: 'Cười xấu mà anh vẫn thích'},
-        {src: 'assets/photos/5.jpg', caption: 'Sinh nhật em năm ngoái'},
-        {src: 'assets/photos/6.jpg', caption: 'Ngày thường, mà vui'}
+        {src: 'assets/photos/1.png', caption: 'iem Nhím 2 tủi nè'},
+        {src: 'assets/photos/2.png', caption: 'iem Nhím nữa nè'},
+        {src: 'assets/photos/3.png', caption: 'Đi en nè'},
+        {src: 'assets/photos/4.png', caption: 'Dallas nè'},
+        {src: 'assets/photos/5.png', caption: 'Xinh quó hẹ hẹ'},
+        {src: 'assets/photos/6.png', caption: 'Kĩ sư Nhism'}
     ],
 
     /* --- Lý do thương em (bấm nút rút ngẫu nhiên) --- */
