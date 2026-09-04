@@ -1,10 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gửi em ❤️</title>
+<meta name="description" content="Một món quà nhỏ làm bằng tay, dành riêng cho em.">
+<meta name="theme-color" content="#fbf6ff">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gửi em ❤️">
+<meta property="og:description" content="Một món quà nhỏ làm bằng tay, dành riêng cho em.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%97%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Quicksand:wght@400;500;600&display=swap">
+
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<a class="skip-link" href="#main">Bỏ qua tới nội dung</a>
+
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<header class="site-header">
+  <nav class="nav" aria-label="Điều hướng chính">
+    <a class="nav__brand" href="#top"><span aria-hidden="true">💗</span> <span data-bind="herName">Em</span></a>
+    <ul class="nav__list">
+      <li><a href="#counter">Thời gian</a></li>
+      <li><a href="#timeline">Kỷ niệm</a></li>
+      <li><a href="#gallery">Ảnh</a></li>
+      <li><a href="#reasons">Lý do</a></li>
+      <li><a href="#gift">Quà</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="wrap hero__inner">
+      <p class="hero__eyebrow reveal">Một món quà nhỏ, làm bằng tay</p>
+      <h1 class="hero__title reveal">
+        Gửi <span class="accent" data-bind="herName">em</span>
+      </h1>
+      <p class="hero__tagline reveal">
+        <span id="typed" aria-hidden="true"></span><span class="caret" aria-hidden="true"></span>
+        <span class="sr-only" id="typedSr"></span>
+      </p>
+      <div class="hero__actions reveal">
+        <a class="btn btn--primary" href="#gift">Mở quà cho em <span aria-hidden="true">🎁</span></a>
+        <a class="btn btn--ghost" href="#counter">Xem chuyện của mình</a>
+      </div>
+    </div>
+    <div class="hero__scroll" aria-hidden="true">↓</div>
+  </section>
+
+  <!-- COUNTER -->
+  <section class="section" id="counter">
+    <div class="wrap">
+      <h2 class="section__title reveal">Mình đã bên nhau</h2>
+      <p class="section__sub reveal" data-bind="startPretty"></p>
+
+      <div class="counter reveal" id="counterGrid" role="timer" aria-live="off">
+        <div class="counter__cell"><span class="counter__num" data-unit="days">--</span><span class="counter__label">ngày</span></div>
+        <div class="counter__cell"><span class="counter__num" data-unit="hours">--</span><span class="counter__label">giờ</span></div>
+        <div class="counter__cell"><span class="counter__num" data-unit="minutes">--</span><span class="counter__label">phút</span></div>
+        <div class="counter__cell"><span class="counter__num" data-unit="seconds">--</span><span class="counter__label">giây</span></div>
+      </div>
+
+      <p class="counter__next reveal" id="nextAnniversary"></p>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section section--alt" id="timeline">
+    <div class="wrap">
+      <h2 class="section__title reveal">Những mốc mình đi qua</h2>
+      <ol class="timeline" id="timelineList"></ol>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="wrap">
+      <h2 class="section__title reveal">Khoảnh khắc của mình</h2>
+      <p class="section__sub reveal">Chạm vào từng tấm để xem lớn hơn nhé.</p>
+      <div class="gallery" id="galleryGrid"></div>
+    </div>
+  </section>
+
+  <!-- REASONS -->
+  <section class="section section--alt" id="reasons">
+    <div class="wrap wrap--narrow">
+      <h2 class="section__title reveal">Lý do anh thương em</h2>
+      <div class="card reveal">
+        <p class="card__text" id="reasonText" aria-live="polite">Bấm nút bên dưới để rút một lý do…</p>
+        <button class="btn btn--primary" type="button" id="reasonBtn">Rút một lý do <span aria-hidden="true">🎴</span></button>
+        <p class="card__meta" id="reasonMeta"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIFT / LETTER -->
+  <section class="section" id="gift">
+    <div class="wrap wrap--narrow">
+      <h2 class="section__title reveal">Món quà chính</h2>
+      <p class="section__sub reveal">Anh giấu một lá thư ở trong này.</p>
+
+      <button class="giftbox reveal" type="button" id="giftBtn" aria-haspopup="dialog">
+        <span class="giftbox__lid" aria-hidden="true"></span>
+        <span class="giftbox__body" aria-hidden="true"></span>
+        <span class="giftbox__cta">Chạm để mở</span>
+      </button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer__line" data-bind="footerNote"></p>
+    <p class="footer__sign">— <span data-bind="myName">Anh</span></p>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="modal" id="lightbox" role="dialog" aria-modal="true" aria-label="Ảnh phóng to" hidden>
+  <button class="modal__close" type="button" data-close aria-label="Đóng">×</button>
+  <button class="modal__nav modal__nav--prev" type="button" id="lbPrev" aria-label="Ảnh trước">‹</button>
+  <figure class="lightbox__figure">
+    <img id="lbImg" alt="">
+    <figcaption id="lbCaption"></figcaption>
+  </figure>
+  <button class="modal__nav modal__nav--next" type="button" id="lbNext" aria-label="Ảnh sau">›</button>
+</div>
+
+<!-- LETTER -->
+<div class="modal modal--letter" id="letter" role="dialog" aria-modal="true" aria-labelledby="letterTitle" hidden>
+  <div class="letter">
+    <button class="modal__close modal__close--inline" type="button" data-close aria-label="Đóng thư">×</button>
+    <h3 class="letter__title" id="letterTitle"></h3>
+    <div class="letter__body" id="letterBody"></div>
+    <p class="letter__sign">Yêu em, <span data-bind="myName"></span></p>
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
